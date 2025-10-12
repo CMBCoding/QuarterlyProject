@@ -1,0 +1,257 @@
+* {
+    /* color: var(--seasalt); */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: var(--seasalt);
+}
+
+:root {
+    /* CSS HEX */
+    --night: #0D1013ff;
+    --bice-blue: #1F6DA9ff;
+    --imperial-red: #EE3336ff;
+    --steel-blue: #3680BDff;
+    --powder-blue: #9FC4E0ff;
+    --bittersweet: #F06264ff;
+    --seasalt: #FAFBFCff;
+    --gold: #CAAA0A;
+    --royal-purple: #5C54CA;
+
+    /* Hover Animation */
+    --hover-duration: all 0.4s ease-in-out;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: var(--night);
+    background-image: url(img/artfilm.gif);
+    background-blend-mode: lighten;
+    background-position: center;
+    background-size: 105%;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+main {
+    grid-column: 2 / 17;
+    grid-row: 1 / 17;
+    color: var(--seasalt);
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+/*---------- Google Fonts ----------*/
+.bbh-sans-bogle {
+    font-family: "BBH Sans Bogle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*---------- Sidebar ----------*/
+#sidebar {
+    grid-row: 1 / 17;
+    grid-column: 1 / 2;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-right: solid var(--seasalt) 0.2rem;
+    background-color: var(--night);
+    background-image: url(img/filmtextureB.gif);
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size: contain;
+}
+
+/*---------- Header and Navigation ----------*/
+#nav-bar-list {
+    grid-column: 1 / 17;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul>li {
+    list-style-type: none;
+}
+
+#nav-bar {
+    height: 100%;
+}
+
+/*---------- Navigation Links ----------*/
+.nav-link {
+    background: none;
+    border: solid var(--seasalt) 0.2rem;
+    height: 4rem;
+    width: 12rem;
+    display: flex;
+    margin: 0.8rem 0.5rem;
+    padding: 0.5rem 0.1rem;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    align-items: center;    
+}
+.nav-link h1 {
+    font-size: 1.5rem;
+}
+
+.line-break {
+    width: 90%;
+    background-color: var(--seasalt);
+    border: solid var(--seasalt) 0.1rem;
+    margin: 0.2rem 0;
+}
+
+#link-home:hover {
+    border: solid var(--imperial-red) 0.2rem;
+    color: var(--imperial-red);
+    transition: var(--hover-duration);
+    background-image: url(img/filmtextureA.gif);
+    background-size: contain;
+    background-position: center;
+}
+#link-home:hover h1, #link-home:hover p {
+    color: var(--imperial-red);
+    transition: var(--hover-duration);
+}
+#link-home:hover .line-break {
+    background-color: var(--imperial-red);
+    border: solid var(--imperial-red) 0.1rem;
+    transition: var(--hover-duration);
+}
+
+/* -------------------------------- */
+
+#link-2P:hover {
+    border: solid var(--steel-blue) 0.2rem;
+    color: var(--steel-blue);
+    transition: var(--hover-duration);
+    background-image: url(img/filmtextureA.gif);
+    background-size: contain;
+    background-position: center;
+}
+#link-2P:hover h1,
+#link-2P:hover p {
+    color: var(--steel-blue);
+    transition: var(--hover-duration);
+}
+#link-2P:hover .line-break {
+    background-color: var(--steel-blue);
+    border: solid var(--steel-blue) 0.1rem;
+    transition: var(--hover-duration);
+}
+
+#link-3P:hover {
+    border: solid var(--gold) 0.2rem;
+    color: var(--gold);
+    transition: var(--hover-duration);
+    background-image: url(img/filmtextureA.gif);
+    background-size: contain;
+    background-position: center;
+}
+#link-3P:hover h1, 
+#link-3P:hover p {
+    color: var(--gold); 
+    transition: var(--hover-duration);
+}
+#link-3P:hover .line-break {
+    background-color: var(--gold);
+    border: solid var(--gold) 0.1rem;
+    transition: var(--hover-duration);
+}
+
+#main-logo {
+    grid-column: 1 / 4;
+    grid-row: 1 / 6;
+    width: 13vw;
+    align-self: center;
+    justify-self: center;
+    z-index: 3;
+}
+
+/*---------- Title Container ----------*/
+#title-container {
+    display: flex;
+    grid-column: 2 / 17;
+    grid-row: 9 / 11;
+    width: 22rem;
+    padding: 0.5rem 0.1rem;
+    background: none;
+    border: solid var(--seasalt) 0.2rem;
+    height: 12rem;
+    display: flex;
+    margin: 0.8rem 0.5rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    left: -1rem;
+}
+#title-container h1 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+#title-container-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+#title-container h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+/*---------- Footer ----------*/
+#footer {
+    grid-column: 1 / 17;
+    grid-row: 16 / 17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#bottom-banner {
+    position: absolute;
+    bottom: -2rem;
+    width: 105%;
+    object-fit: contain;
+}
+
+/*---------- Design Ideas ----------*/
+/*https: //www.peppasauce.love*/
+/* https: //www.milli.agency */
+/* https: //www.seaharvest.net.au */
+/* https: //spacecadet.ventures */
+/* https: //www.webdesign-inspiration.com/web-design/salomon-foodworldcom */
