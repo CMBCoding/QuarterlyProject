@@ -7,6 +7,8 @@
     color: var(--seasalt);
 }
 
+/*---------- Root and Global Styles ----------*/
+
 :root {
     /* CSS HEX */
     --night: #0D1013ff;
@@ -20,7 +22,7 @@
     --royal-purple: #5C54CA;
 
     /* Hover Animation */
-    --hover-duration: all 0.4s ease-in-out;
+    --hover-duration: all 0.5s ease-in-out;
 }
 
 html, body {
@@ -28,11 +30,8 @@ html, body {
     width: 100%;
 }
 
+
 body {
-    background-color: var(--night);
-    background-image: url(img/artfilm.gif);
-    background-blend-mode: lighten;
-    background-position: center;
     background-size: 105%;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -40,6 +39,12 @@ body {
 }
 
 main {
+    background-color: var(--night);
+    background-image: url(img/Texturelabs_Details_176XL.jpg);
+    background-size: contain;
+    background-blend-mode: lighten;
+    background-position: center;
+    background-repeat: no-repeat;
     grid-column: 2 / 17;
     grid-row: 1 / 17;
     color: var(--seasalt);
@@ -49,9 +54,44 @@ main {
     grid-template-rows: repeat(16, 1fr);
 }
 
+.typewriter-block {
+    background-color: var(--seasalt);
+    color: var(--night);
+    font-size: inherit;
+}
+
+#categories {
+    grid-column: 2 / 17;
+    grid-row: 1 / 17;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 2rem 0.5rem;
+}
+
+/*---------- Second Page BG ----------*/
+
+/* #categories {
+    background-color: var(--night);
+    background-image: url(img/Texturelabs_Details_176XL.jpg);
+    background-size: cover;
+    background-blend-mode: lighten;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
 /*---------- Google Fonts ----------*/
 .bbh-sans-bogle {
     font-family: "BBH Sans Bogle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.mozilla-text {
+    font-family: "Mozilla Text", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
@@ -68,10 +108,11 @@ main {
     flex-wrap: nowrap;
     border-right: solid var(--seasalt) 0.2rem;
     background-color: var(--night);
-    background-image: url(img/filmtextureB.gif);
-    background-blend-mode: overlay;
-    background-position: center;
-    background-size: contain;
+    background-image: url(img/Texturelabs_LensFX_232XL.jpg);
+    /* background-blend-mode: overlay;
+    background-position: center; */
+    background-size: cover;
+    background-position: bottom;
 }
 
 /*---------- Header and Navigation ----------*/
@@ -114,28 +155,42 @@ ul>li {
     justify-content: center;
     text-align: center;
     flex-wrap: nowrap;
-    align-items: center;    
+    align-items: center;
 }
 .nav-link h1 {
     font-size: 1.5rem;
 }
+.nav-link a {text-decoration: none;}
+.nav-link a  p, .line-break {
+    display: none;
+}
 
 .line-break {
     width: 90%;
-    background-color: var(--seasalt);
-    border: solid var(--seasalt) 0.1rem;
+    justify-self: center;
+    background-color: var(--powder-blue);
+    border: solid var(--powder-blue) 0.1rem;
     margin: 0.2rem 0;
 }
 
-#link-home:hover {
-    border: solid var(--imperial-red) 0.2rem;
-    color: var(--imperial-red);
-    transition: var(--hover-duration);
-    background-image: url(img/filmtextureA.gif);
-    background-size: contain;
-    background-position: center;
+.nav-link:hover a p,
+.nav-link:hover .line-break, .nav-link:hover h1 {
+    display: block;
+    color: var(--powder-blue);
 }
-#link-home:hover h1, #link-home:hover p {
+
+.nav-link:hover {
+    background-image: url(img/Texturelabs_LensFX_232XL.jpg);
+    border: solid var(--powder-blue) 0.2rem;
+    color: var(--powder-blue);
+    background-size: cover;
+    background-position: center;
+    transition: var(--hover-duration);
+    /* box-shadow: var(--steel-blue) 0.3rem 0.3rem 0px 0px; */
+    /* transition: var(--hover-duration); */
+}
+
+/* #link-home:hover h1, #link-home:hover p {
     color: var(--imperial-red);
     transition: var(--hover-duration);
 }
@@ -143,47 +198,9 @@ ul>li {
     background-color: var(--imperial-red);
     border: solid var(--imperial-red) 0.1rem;
     transition: var(--hover-duration);
-}
+} */
 
 /* -------------------------------- */
-
-#link-2P:hover {
-    border: solid var(--steel-blue) 0.2rem;
-    color: var(--steel-blue);
-    transition: var(--hover-duration);
-    background-image: url(img/filmtextureA.gif);
-    background-size: contain;
-    background-position: center;
-}
-#link-2P:hover h1,
-#link-2P:hover p {
-    color: var(--steel-blue);
-    transition: var(--hover-duration);
-}
-#link-2P:hover .line-break {
-    background-color: var(--steel-blue);
-    border: solid var(--steel-blue) 0.1rem;
-    transition: var(--hover-duration);
-}
-
-#link-3P:hover {
-    border: solid var(--gold) 0.2rem;
-    color: var(--gold);
-    transition: var(--hover-duration);
-    background-image: url(img/filmtextureA.gif);
-    background-size: contain;
-    background-position: center;
-}
-#link-3P:hover h1, 
-#link-3P:hover p {
-    color: var(--gold); 
-    transition: var(--hover-duration);
-}
-#link-3P:hover .line-break {
-    background-color: var(--gold);
-    border: solid var(--gold) 0.1rem;
-    transition: var(--hover-duration);
-}
 
 #main-logo {
     grid-column: 1 / 4;
@@ -196,25 +213,37 @@ ul>li {
 
 /*---------- Title Container ----------*/
 #title-container {
-    display: flex;
     grid-column: 2 / 17;
     grid-row: 9 / 11;
     width: 22rem;
-    padding: 0.5rem 0.1rem;
+    padding: 0.5rem 1rem;
     background: none;
     border: solid var(--seasalt) 0.2rem;
-    height: 12rem;
+    height: 20rem;
     display: flex;
     margin: 0.8rem 0.5rem;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     z-index: 2;
     position: relative;
     left: -1rem;
+    flex-wrap: wrap;
+    align-content: center;
+}
+#title-container h2 {
+    font-size: 1.8rem;
+    text-align: left;
+    letter-spacing: 0.2rem;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
 }
 #title-container h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    line-height: 1.2;
     margin: 0;
     padding: 0;
 }
@@ -229,6 +258,61 @@ ul>li {
     font-size: 1.5rem;
     margin: 0;
     padding: 0;
+}
+
+/*---------- Profile Cards ----------*/
+
+.profile-card {
+    display: grid;
+    grid-template-areas: 
+    "img-faction profile-hd"
+    "img-faction profile-p"
+    "img-faction profile-p";
+    grid-template-columns: 1fr 4fr;;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.4rem;
+    /* width: 27rem; */
+    height: 8.4rem;
+    background-image: url(img/Texturelabs_Film_188XL.jpg);
+    background-size: cover;
+    background-position: center;
+    /* background: var(--night); */
+    /* border: solid var(--seasalt) 0.2rem; */
+    margin: 0.8rem 0.5rem;
+}
+.profile-image {
+    grid-area: img-faction;
+    height: 7rem;
+    width: 7rem;
+    border: solid var(--seasalt) 0.2rem;
+    object-fit: cover;
+    align-self: center;
+    justify-self: center;
+}
+.profile-card h1 {
+    display: none;
+    grid-area: profile-hd;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-left: 1rem;
+}
+.profile-card p {
+    display: none;
+    grid-area: profile-p;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.profile-card:hover {
+    display: grid;
+    padding: 0.5rem 0.5rem;
+    width: 27rem;
+    /* height: 30rem; */
+    transition: var(--hover-duration);
+}
+.profile-card:hover h1, .profile-card:hover p {
+    display: block;
+    transition: inherit;
 }
 
 /*---------- Footer ----------*/
