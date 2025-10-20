@@ -23,6 +23,7 @@
 
     /* Hover Animation */
     --hover-duration: all 0.5s ease-in-out;
+    --tile-transition: all 0.6s linear;
 }
 
 html, body {
@@ -65,23 +66,18 @@ main {
     grid-row: 1 / 17;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-content: space-around;
     align-items: center;
-    height: 100%;
     overflow-y: scroll;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: 100%;
     padding: 2rem 0.5rem;
 }
 
-/*---------- Second Page BG ----------*/
 
-/* #categories {
-    background-color: var(--night);
-    background-image: url(img/Texturelabs_Details_176XL.jpg);
-    background-size: cover;
-    background-blend-mode: lighten;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
 
 /*---------- Google Fonts ----------*/
 .bbh-sans-bogle {
@@ -123,7 +119,7 @@ main {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -186,29 +182,6 @@ ul>li {
     background-size: cover;
     background-position: center;
     transition: var(--hover-duration);
-    /* box-shadow: var(--steel-blue) 0.3rem 0.3rem 0px 0px; */
-    /* transition: var(--hover-duration); */
-}
-
-/* #link-home:hover h1, #link-home:hover p {
-    color: var(--imperial-red);
-    transition: var(--hover-duration);
-}
-#link-home:hover .line-break {
-    background-color: var(--imperial-red);
-    border: solid var(--imperial-red) 0.1rem;
-    transition: var(--hover-duration);
-} */
-
-/* -------------------------------- */
-
-#main-logo {
-    grid-column: 1 / 4;
-    grid-row: 1 / 6;
-    width: 13vw;
-    align-self: center;
-    justify-self: center;
-    z-index: 3;
 }
 
 /*---------- Title Container ----------*/
@@ -263,7 +236,7 @@ ul>li {
 /*---------- Profile Cards ----------*/
 
 .profile-card {
-    display: grid;
+    display: hidden;
     grid-template-areas: 
     "img-faction profile-hd"
     "img-faction profile-p"
@@ -271,14 +244,13 @@ ul>li {
     grid-template-columns: 1fr 4fr;;
     grid-template-rows: repeat(3, 1fr);
     gap: 0.4rem;
-    /* width: 27rem; */
-    height: 8.4rem;
     background-image: url(img/Texturelabs_Film_188XL.jpg);
     background-size: cover;
     background-position: center;
     /* background: var(--night); */
     /* border: solid var(--seasalt) 0.2rem; */
     margin: 0.8rem 0.5rem;
+    transition: var(--tile-transition);
 }
 .profile-image {
     grid-area: img-faction;
@@ -292,7 +264,7 @@ ul>li {
 .profile-card h1 {
     display: none;
     grid-area: profile-hd;
-    text-align: center;
+    text-align: left;
     font-size: 1.8rem;
     margin-left: 1rem;
 }
@@ -306,9 +278,9 @@ ul>li {
 .profile-card:hover {
     display: grid;
     padding: 0.5rem 0.5rem;
-    width: 27rem;
+    width: 26rem;
     /* height: 30rem; */
-    transition: var(--hover-duration);
+    transition: var(--tile-transition);
 }
 .profile-card:hover h1, .profile-card:hover p {
     display: block;
