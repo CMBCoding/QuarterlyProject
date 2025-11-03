@@ -79,6 +79,37 @@ main {
     justify-items: center;
 }
 
+#phenomena {
+    display: flex;
+    gap: 0.5rem;
+    grid-auto-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    padding: 2rem 0.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dossier {
+    /* grid-column: 2 / 17; */
+    /* grid-row: 1 / 17; */
+    display: flex;
+    gap: 0.5rem;
+    grid-auto-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
 #page-title {
     font-size: 4rem;
     grid-column: 1 / 3;
@@ -269,7 +300,7 @@ ul>li {
     min-width: .5rem;
     height: 7rem;
     width: 7rem;
-    background-image: url(img/Texturelabs_Film_188XL.jpg);
+    background-image: url(img/Texturelab_Film_188XL.jpg);
     background-size: cover;
     background-position: center;
     margin: 0.8rem 0.5rem;
@@ -277,7 +308,6 @@ ul>li {
 }
 
 .profile-image {
-    grid-area: img-faction;
     max-height: 7rem;
     max-width: 7rem;
     min-height: 3rem;
@@ -329,6 +359,69 @@ ul>li {
 .profile-card:hover p, 
 .profile-card:hover h2 {
     display: block;
+    transition: inherit;
+}
+
+/*---------- Dossier Page ----------*/
+.dossier-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(img/Texturelabs_Film_188XL.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    grid-column: 1 / 3;
+    grid-row: 3 / 9;
+    padding: 1rem 2rem;
+}
+
+/*---------- Phenomena ----------*/
+
+.tile-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.tile {
+    display: flex;
+    min-height: .5rem;
+    min-width: .5rem;
+    padding: 0.4rem 0.4rem;
+    height: 6rem;
+    width: 6rem;
+    background-image: url(img/Texturelabs_LensFX_230XL.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 0.8rem 0.5rem;
+}
+.tile p {
+    display: none;
+    text-align: center;
+    text-wrap: wrap;
+    font-size: 1.2rem;
+}
+
+.tile:hover {
+    display: flex;
+    height: 8rem;
+    width: 8rem;
+    transition: var(--tile-transition);
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.tile:hover p {
+    display: inline;
     transition: inherit;
 }
 
